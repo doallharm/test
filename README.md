@@ -8,7 +8,7 @@ The quiz game consists of multiple-choice questions where players can select ans
 
 ## Usage
 
-To play the quiz game, simply open the `test.html` file in a web browser. The game will start automatically, and you can answer the questions by clicking on the provided options.
+To play the quiz game, simply open the `index.html` file in a web browser. The game will start automatically, and you can answer the questions by clicking on the provided options.
 
 ## Contributing
 
