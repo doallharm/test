@@ -1,0 +1,191 @@
+/* Base styles for body and html */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url('img/ncbg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;  /* Optional, for fixed background on scroll */
+    color: #333;
+    background-color: #f4f4f4; /* Fallback color */
+}
+/* Section styles */
+#about, #gallery {
+    padding: 20px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+.section {
+    position: relative; /* Needed for absolute positioning of pseudo-element */
+    padding: 20px; /* Example padding */
+    margin: 10px 0; /* Space between sections */
+}
+
+.section::before {
+    content: ""; /* Necessary for the pseudo-element to work */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(128, 128, 128, 0.5); /* Grey color with 50% opacity */
+    z-index: -1; /* Ensures the background is behind the content */
+}
+
+/* Grid styling for the photo gallery */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 10px;
+    align-items: start;
+}
+
+.photo-grid img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover; /* Covers the grid area, might crop some parts of the image */
+}
+
+/* Header styles */
+header, .header-container {
+    background-color: #0047AB;
+    color: white;
+}
+
+header {
+    padding: 20px;
+    text-align: center;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.logo {
+    height: 50px; /* Adjust size as needed */
+}
+
+/* Navigation link styles */
+.nav-links {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    overflow: visible;
+    max-height: none;
+    transition: max-height 0.3s ease-out;
+}
+
+.nav-links li {
+    padding: 0 15px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+/* Background section with overlay */
+.background-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+	background-image: url('img/ncbg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+#courses {
+    text-align: center;
+}
+
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+}
+
+.course {
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.course img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.course-description {
+    padding: 10px;
+}
+.background-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+}
+
+.content {
+    position: relative;
+    z-index: 1;
+    color: white;
+    padding: 20px;
+}
+
+/* Responsive navigation toggle */
+.nav-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        overflow: hidden;
+        max-height: 0;
+    }
+
+    .nav-links li {
+        padding: 10px 0;
+    }
+
+    .nav-toggle {
+        display: block;
+    }
+}
+
+/* Footer styling */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    flex-shrink: 0;
+}
+
+@media (max-width: 600px) {
+    .photo-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
