@@ -23,49 +23,101 @@
         </div>
 		<h2>About</h2>
     </header>
+	
 
     <main>
         
-    <section class="section" id="about">
-		
-       
+    
+	
+	
+	<section id="courses" class="">
+	<div class="course-grid">
+	<div class="course">
+		<h1 style="font-size: 50px;">About Norzagaray College</h1>
 		<img src="img/aboutpic.jpg" alt="Gallery Photo 1">
-		 <h2>About Norzagaray College</h2>
-        <p>Norzagaray College is a government institution for the development of man’s potentials both as an individual and as a m	ember of society. Likewise, it is established to help the rural underprivileged and marginalized members of the community.The main concern of the college is to develop the intellectual, spiritual, emotional, social and physical aspects of the students.</p>
-		<h2>Vision</h2>
-		<p>Norzagaray College envisions itself to transform lives of individuals and communities through life-long learning</p>
-		<h2>Mission</h2>
-		<p>As an Instituition of Higher Education, we commit ourselves to:</p>
-		<p>1. Produce local and global competitive professionals through quality, accessible and affordable education;</p>
-		<p>2. Develop the intellectual, physical, social, spiritual, cultural and career potential of the individual capable of meeting the needs of industry, public service and civil society; and</p>
-		<p>3. Provide innovative educational environment, opportunities and experiences that enable and communities to grow, thrive and prosper</p>
+		
+		<p class="course-description">Norzagaray College is a government institution for the development of man’s potentials both as an individual and as a member of society. Likewise, it is established to help the rural underprivileged and marginalized members of the community.The main concern of the college is to develop the intellectual, spiritual, emotional, social and physical aspects of the students.</p>
+        
+		
+        
+    </div>
+	</div>
+	
+	
 	</section>
 	
-	<section class="section" id="about">
+	
+	<section id="courses" class="">
+	<div class="course-grid">
+	<div class="course">
+		<h1 style="font-size: 50px;">Vision</h1>
+		<img src="img/Vision.jpg" alt="Gallery Photo 1">
 		
-       
+		<p class="course-description">Norzagaray College envisions itself to transform lives of individuals and communities through life-long learning</p>
+		</div>
+		</div>
+        
 		
-		<h2>Privacy Policy</h2>
-        <p style="line-height: 3.5;">This Privacy Policy describes how we collect, use, and disclose information when you visit our website [Website URL]. Please read this Privacy Policy carefully.</p>
-		<p style="line-height: 3.5;">1. Information We Collect We may collect personal information such as your name, email address, and any other information you voluntarily provide when you contact us or sign up for our newsletter.</p>
-		<p style="line-height: 3.5;">2. How We Use Your Information We may use the information we collect to:</p>
-		<ul style="line-height: 1.5; margin-left: 20px;">
-			<li>Provide and maintain our services</li>
-			<li>Improve our services</li>
-			<li>Respond to your inquiries</li>
-			<li>Send you marketing communications</li>
-		</ul>
-		<p style="line-height: 3.5;">3. Data Security We take the security of your data seriously and take appropriate measures to protect your information.</p>
-		<p style="line-height: 3.5;">4. Third-Party Links Our website may contain links to third-party websites. We are not responsible for the privacy practices of these websites.</p>
-		<p style="line-height: 3.5;">5. Changes to this Privacy Policy We reserve the right to modify this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy on this website.</p>
-		<p style="line-height: 3.5;">6. Contact Us If you have any questions about this Privacy Policy, please contact us at [Contact Information].</p>
-		<p style="line-height: 3.5;">By using our website, you agree to the terms outlined in this Privacy Policy.</p>
-
+        
+    </div>
+	
 	</section>
+	
+	<section id="courses" class="">
+		
+
+		
+		<div class="course-grid">
+		<div class="course">
+		<h1 style="font-size: 50px;">Mission</h1>
+		<img src="img/Mission.jpg" alt="Gallery Photo 1">
+		<p class="course-description">As an Instituition of Higher Education, we commit ourselves to:<br><br><br>
+		1. Produce local and global competitive professionals through quality, accessible and affordable education;<br><br><br>2. Develop the intellectual, physical, social, spiritual, cultural and career potential of the individual capable of meeting the needs of industry, public service and civil society; and<br><br><br>3. Provide innovative educational environment, opportunities and experiences that enable and communities to grow, thrive and prosper</p>
+        </div>
+		</div>
+		
+        
+    </div>
+	
+	
+	</section>
+	<section id="courses" class="">
+		
+
+		
+		<div class="course-grid">
+		<div class="course">
+		<h1 style="font-size: 50px;">Privacy Policy</h1>
+		<img src="img/ncicon.png" alt="Gallery Photo 1">
+		<p class="course-description">This Privacy Policy describes how we collect, use, and disclose information when you visit our website [Website URL]. Please read this Privacy Policy carefully.<br><br><br>
+		1. Information We Collect We may collect personal information such as your name, email address, and any other information you voluntarily provide when you contact us or sign up for our newsletter.<br><br><br>2. Data Security We take the security of your data seriously and take appropriate measures to protect your information.<br><br><br>3. Third-Party Links Our website may contain links to third-party websites. We are not responsible for the privacy practices of these websites.<br><br><br>4. Changes to this Privacy Policy We reserve the right to modify this Privacy Policy at any time. Any changes will be effective immediately upon posting the updated Privacy Policy on this website.<br><br><br>5. Contact Us If you have any questions about this Privacy Policy, please contact us at [Contact Information].<br><br><br>By using our website, you agree to the terms outlined in this Privacy Policy.
+		</p>
+		</div>
+		
+        </div>
+		
+        
+    </div>
+	
+	
+	</section>
+	
+	
 	
     
     </main>
   
-	<script src="navigation.js"></script>
+	
+	<script>
+    document.addEventListener("scroll", function() {
+        const header = document.querySelector("header");
+        if (window.scrollY > 50) {
+            header.classList.add("shrink");
+        } else {
+            header.classList.remove("shrink");
+        }
+    });
+</script>
+
 </body>
 </html>

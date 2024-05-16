@@ -4,12 +4,25 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
+    color: #333;
+    background-color: #f4f4f4; /* Fallback color */
+    position: relative;
+    min-height: 100vh; /* Ensure body takes full height of the viewport */
+    overflow: auto; /* Allow scrolling */
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('img/ncbg.jpg');
     background-size: cover;
     background-position: center;
-    background-attachment: fixed;  /* Optional, for fixed background on scroll */
-    color: #333;
-    background-color: #f4f4f4; /* Fallback color */
+    filter: blur(5px); /* Adjust the blur amount as needed */
+    z-index: -1; /* Ensure the background is behind the content */
 }
 /* Section styles */
 #about, #gallery {
@@ -17,10 +30,15 @@ body {
     text-align: center;
     background-color: #f4f4f4;
 }
+.container {
+    background-color: transparent;
+}
+
 .section {
     position: relative; /* Needed for absolute positioning of pseudo-element */
-    padding: 20px; /* Example padding */
-    margin: 10px 0; /* Space between sections */
+    padding: 100px 100px; /* Example padding */
+    margin: 100px 0; /* Space between sections */
+    background-color: rgba(0, 0, 0, 0.50); /* Grey background with 25% opacity */
 }
 
 .section::before {
@@ -37,34 +55,50 @@ body {
 /* Grid styling for the photo gallery */
 .photo-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: 1fr;
     gap: 10px;
     align-items: start;
+    overflow: hidden;
 }
 
 .photo-grid img {
     width: 100%;
     height: auto;
+    display: none;
+    object-fit: cover;
+}
+.photo-grid img.active {
     display: block;
-    object-fit: cover; /* Covers the grid area, might crop some parts of the image */
+}
+.photo-grid img:first-child {
+    display: block; /* Show the first image immediately */
 }
 
 /* Header styles */
 header, .header-container {
     background-color: #0047AB;
     color: white;
+	margin-bottom:-70px;
 }
+
 
 header {
     padding: 20px;
     text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure the header is above all other content */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s, transform 0.3s; /* Add transition for smooth animation */
 }
 
 .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px 20px;
+    padding: 0 20px;
 }
 
 .logo {
@@ -76,9 +110,6 @@ header {
     list-style: none;
     display: flex;
     padding: 0;
-    overflow: visible;
-    max-height: none;
-    transition: max-height 0.3s ease-out;
 }
 
 .nav-links li {
@@ -96,12 +127,29 @@ header {
     position: relative;
     width: 100%;
     height: 400px;
-	background-image: url('img/ncbg.jpg');
+    background-image: url('img/ncbg.jpg');
     background-size: cover;
     background-position: center;
 }
+
+.background-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.75);
+    pointer-events: none;
+}
 #courses {
     text-align: center;
+	color: white;
+	padding-left:20px;
+	padding-right:20px;
+	padding-top:50px;
+	padding-bottom:50px;
+	
 }
 
 .course-grid {
@@ -110,23 +158,29 @@ header {
     gap: 20px;
     justify-items: center;
     margin-top: 20px;
+	
+	
 }
 
 .course {
-    background-color: #fff;
-    border-radius: 5px;
+    padding: 50px;
+    background-color: rgba(0, 0, 0, 0.65);
+    border-radius: 15px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    max-width: 100%; /* Ensures the container scales with its parent */
 }
 
 .course img {
-    width: 100%;
+    max-width: 100%;
     height: auto;
     object-fit: cover;
 }
 
 .course-description {
     padding: 10px;
+    color: white; /* Set text color to white */
+    font-size: 16px; /* Set text size to 16 pixels */
 }
 .background-section::before {
     content: "";
@@ -138,7 +192,6 @@ header {
     background-color: rgba(0, 0, 0, 0.75);
     pointer-events: none;
 }
-
 .content {
     position: relative;
     z-index: 1;
@@ -150,6 +203,10 @@ header {
 .nav-toggle {
     display: none;
     cursor: pointer;
+}
+header.shrink {
+    background-color: #003080; /* Darker shade when shrinking */
+    transform: translateY(-10px); /* Move up slightly */
 }
 
 @media (max-width: 768px) {
@@ -163,6 +220,7 @@ header {
         align-items: center;
         overflow: hidden;
         max-height: 0;
+        transition: max-height 0.3s ease-out;
     }
 
     .nav-links li {
