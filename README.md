@@ -1,14 +1,14 @@
-# Simple Quiz Game
+# Simple School Portal
 
-This is a simple quiz game created using HTML, CSS, and JavaScript.
+This is a simple school portal created using HTML, CSS, and JavaScript.
 
 ## About
 
-The quiz game consists of multiple-choice questions where players can select answers by clicking on buttons. It includes basic logic for displaying questions, checking answers, and progressing through the quiz.
+The school portal consists of details that school portal usually uses and extra features to provide additional function.
 
 ## Usage
 
-To play the quiz game, simply open the `index.html` file in a web browser. The game will start automatically, and you can answer the questions by clicking on the provided options.
+To visit the site, simply open the `index.html` file in a web browser. The game will start automatically, and you can answer the questions by clicking on the provided options.
 
 ## Contributing
 
